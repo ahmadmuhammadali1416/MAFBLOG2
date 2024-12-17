@@ -9,14 +9,14 @@ export default function SignIn() {
   const [formData, setFormData] = useState({});
   // const [errorMessage, setErrorMessage] = useState(null);
   // const [loading, setLoading] = useState(false);
-  const {loading, error:errorMessage} = useSelector(state => state.user);
+  const {loading, error:errorMessage} = useSelector((state) => state.user);
 
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleChange = (event) => {
     //console.log(event.target.value);
-    setFormData({ ...formData, [event.target.id]: event.target.value.trim() });
+    setFormData({ ...formData, [event.target.id]: event.target.value });
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
